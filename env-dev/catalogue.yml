@@ -11,6 +11,10 @@ env:
     value: db/master-data.js
 
 
+schema:
+   enabled: true
+   containers:
+   master-data: masterd-data.js
 env:
   - name: DB_TYPE 
     value: mongo

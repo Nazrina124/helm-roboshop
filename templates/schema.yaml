@@ -14,10 +14,12 @@ spec:
   template:
     spec:
       containers:
-      - name: {{ .Values.name}}
-        image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+      {{- range $k, $v .Values.schema.containers }}  ########### loop in range
+      - name: {{ $K }}
+        image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load    
         env:
-           {{- toYaml .Values.schema.env | nindent 10 }}
+           {{- toYaml .$Values.schema.env | nindent 10 }}
+      {{- end -}} 
       restartPolicy: Never
   backoffLimit: 0
 {{- end -}}
