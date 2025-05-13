@@ -9,7 +9,8 @@ spec:
     - name: {{ .Values.name }}
       image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ .Values.name }}
       env:
-        {{- toyaml .Values.env | indent 8 }}   ####indent is sapces you want to give
+        {{- toYaml .Values.env | indent 8 }}   ####indent is sapces you want to give
+     
 
 
 #### git pull ; helm install catalogue ./ -f env-dev/catalogue.yml
