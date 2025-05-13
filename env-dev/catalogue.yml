@@ -1,4 +1,5 @@
 name: catalogue
+port: 8080
 env:
   - name: DB_TYPE 
     value: mongo

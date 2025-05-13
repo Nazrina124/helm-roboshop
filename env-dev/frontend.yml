@@ -1,4 +1,5 @@
 name: frontend
+port: 80
 env:
    - name: CATALOGUE_HOST
      value: "catalogue"
