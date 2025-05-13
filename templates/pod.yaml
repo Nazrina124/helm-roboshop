@@ -9,7 +9,7 @@ spec:
     - name: {{ .Values.name }}
       image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ .Values.name }}
       env:
-        {{- toYaml .Values.env | indent 6 }}   ####indent is sapces you want to give
+{{- toYaml .Values.env | indent 6 }}   ####indent is sapces you want to give
      
 
 
