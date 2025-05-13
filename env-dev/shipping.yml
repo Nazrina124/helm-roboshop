@@ -1,0 +1,14 @@
+name: shipping
+env:
+  - name: DB_TYPE
+    value: mysql
+  - name: APP_GIT_URL
+    value: "https://github.com/roboshop-devops-project-v3/shipping"
+  - name: DB_HOST
+    value: "mysql.dev.naifah.online"
+  - name: SCHEMA_FILE
+    value: db/app-user.sql
+  - name: DB_USER
+    value: root
+  - name: DB_PASS
+    value: RoboShop@1

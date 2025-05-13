@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Values.name }}
+  namespace: roboshop
+  labels:
+   appName: {{ .Values.name }}
+spec:
+  containers:
+    - name: {{ .Values.name }}
+      image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ .Values.name }}
+      env:
+        {{ inslude "toyaml" .Values.env | indent 8 }}   ####indent is sapces you want to give
