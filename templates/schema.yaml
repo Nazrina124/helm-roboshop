@@ -14,7 +14,7 @@ spec:
   template:
     spec:
       containers:
-      {{- range $k, $v .Values.schema.containers }}  ########### loop in range
+      {{- range $k, $v := .Values.schema.containers }}  ########### loop in range
       - name: {{ $K }}
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load    
         env:
