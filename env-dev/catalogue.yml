@@ -11,5 +11,16 @@ env:
     value: db/master-data.js
 
 
+env:
+  - name: DB_TYPE 
+    value: mongo
+  - name: APP_GIT_URL 
+    value: https://github.com/roboshop-devops-project-v3/catalogue
+  - name: DB_HOST
+    value: mongo.dev.naifah.online
+  - name: SCHEMA_FILE
+    value: db/master-data.js
+
+
 
   #DB_TYPE=mongo -e APP_GIT_URL=https://github.com/roboshop-devops-project-v3/catalogue -e DB_HOST=mongo-ip -e SCHEMA_FILE=db/master-data.js

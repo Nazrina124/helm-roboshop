@@ -1,0 +1,23 @@
+### applying condition onschema
+####### {{ if .Values.something }}
+####content of yaml file
+#####{{ end }}
+
+apiVersion: batch/v1
+{{ if .Values.schema.enabled -}}
+kind: Job
+metadata:
+  name: {{ .Values.name }}-schema
+  labels:
+   appName: {{ .Values.name }}
+spec:
+  template:
+    spec:
+      containers:
+      - name: {{ .Values.name}}
+        image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+        env:
+           {{- toYaml .Values.schema.env | nindent 10 }}
+      restartPolicy: Never
+  backoffLimit: 4
+  {{ end }}

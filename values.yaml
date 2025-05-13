@@ -1,1 +1,3 @@
 ServiceType: LoadBalancer
+schema: 
+  enabled: false
