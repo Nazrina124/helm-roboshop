@@ -22,8 +22,7 @@ env:
     value: https://github.com/roboshop-devops-project-v3/catalogue
   - name: DB_HOST
     value: mongo.dev.naifah.online
-  - name: SCHEMA_FILE
-    value: db/master-data.js
+
 
 
 
