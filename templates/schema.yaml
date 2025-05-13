@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       {{- range $k, $v := .Values.schema.containers }}  ########### loop in range
-      - name: {{ $K }}
+      - name: {{ $k }}
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load    
         env:
           {{- toYaml .$Values.schema.env | nindent 12 }}
