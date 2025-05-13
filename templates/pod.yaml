@@ -3,13 +3,15 @@ kind: Pod
 metadata:
   name: {{ .Values.name }}
   labels:
-   appName: {{ .Values.name }}
+    appName: {{ .Values.name }}
 spec:
   containers:
     - name: {{ .Values.name }}
       image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ .Values.name }}
       env:
-{{- toYaml .Values.env | indent 6 }}   ####indent is sapces you want to give
+        {{- toYaml .Values.env | nindent 8 }}
+
+  ####indent is sapces you want to give
      
 
 
