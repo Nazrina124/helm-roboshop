@@ -3,12 +3,11 @@
 ####content of yaml file
 #####{{ end }}
 
-apiVersion: batch/v1
-{{ if .Values.schema.enabled -}}
+{{- if .Values.schema.enabled -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ .Values.name }}-schema
+  name: {{ .Values.name }}
   labels:
    appName: {{ .Values.name }}
 spec:
@@ -20,5 +19,5 @@ spec:
         env:
            {{- toYaml .Values.schema.env | nindent 10 }}
       restartPolicy: Never
-  backoffLimit: 4
-  {{ end }}
+  backoffLimit: 0
+{{- end -}}
