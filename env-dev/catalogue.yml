@@ -1,15 +1,10 @@
 name: catalogue
-port: 80
+port: 8080
 env:
-  - name: DB_TYPE 
-    value: mongo
-  - name: APP_GIT_URL 
-    value: https://github.com/roboshop-devops-project-v3/catalogue
-  - name: DB_HOST
-    value: mongo.dev.naifah.online
-  - name: SCHEMA_FILE
-    value: db/master-data.js
-
+  - name: MONGO_URL
+    value: "mongodb://mongo.dev.rdevopsb80.online:27017/catalogue"
+  - name: MONGO
+    value: "true"
 
 schema:
    enabled: true
@@ -23,7 +18,7 @@ env:
   - name: DB_HOST
     value: mongo.dev.naifah.online
   - name: SCHEMA_FILES
-    value: "Master-data"
+    value: "Master-data
 
 
 
