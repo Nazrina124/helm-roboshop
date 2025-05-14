@@ -14,11 +14,12 @@ spec:
   template:
     spec:
       containers:
-      - name: schema-load
-        image: 640168456211.dkr.ecr.us-east-1.amazonaws.com/schema-load:latest
-        imagePullPolicy: Always
-        env:
-          {{- toYaml $.Values.schema.env | nindent 12 }}
+       - name: schema-load
+         image: 640168456211.dkr.ecr.us-east-1.amazonaws.com/schema-load:latest
+         imagePullPolicy: Always
+         env:
+          {{- toYaml $.Values.schema.env | nindent 10 }}
       restartPolicy: Never
   backoffLimit: 0
 {{- end -}}
+
