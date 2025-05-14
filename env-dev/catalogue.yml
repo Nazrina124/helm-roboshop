@@ -18,7 +18,7 @@ env:
   - name: DB_HOST
     value: mongo.dev.naifah.online
   - name: SCHEMA_FILES
-    value: "Master-data
+    value: "Master-data"
 
 
 
