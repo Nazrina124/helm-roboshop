@@ -10,7 +10,7 @@ schema:
    enabled: true
    containers:
      master-data: master-data.js
-env:
+   env:
     - name: DB_TYPE 
       value: mongo
     - name: APP_GIT_URL 
@@ -19,6 +19,7 @@ env:
       value: mongo.dev.naifah.online
     - name: SCHEMA_FILES
       value: "Master-data"
+
 
 
 
