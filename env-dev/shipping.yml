@@ -13,3 +13,25 @@ env:
     value: root
   - name: DB_PASS
     value: RoboShop@1
+
+schema:
+   enabled: true
+   containers:
+     master-data: master-data.js
+     schema: schema.sql
+     app_user: app_user.sql
+env:
+  - name: DB_TYPE 
+    value: mysql
+  - name: APP_GIT_URL 
+    value: "https://github.com/roboshop-devops-project-v3/shipping"
+  - name: DB_HOST
+    value: mysql.dev.naifah.online
+  - name: DB_USER
+    value: root
+  - name: DB_PASS
+    value: RoboShop@1
+  - name: SCHEMA_FILES
+    value: "app-user schema master-data"
+  - name: SCHEMA_FILES
+    value: "app-user schema master-data"

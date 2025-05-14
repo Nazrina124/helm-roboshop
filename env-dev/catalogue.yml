@@ -14,7 +14,7 @@ env:
 schema:
    enabled: true
    containers:
-     master-data: masterd-data.js
+     master-data: master-data.js
 env:
   - name: DB_TYPE 
     value: mongo
@@ -22,6 +22,8 @@ env:
     value: https://github.com/roboshop-devops-project-v3/catalogue
   - name: DB_HOST
     value: mongo.dev.naifah.online
+  - name: SCHEMA_FILES
+    value: "Master-data"
 
 
 
