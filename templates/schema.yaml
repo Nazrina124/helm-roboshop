@@ -2,22 +2,22 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ .Values.name }}
+  name: {{ .Values.name }}-schema
   labels:
     appName: {{ .Values.name }}
   annotations:
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation
 spec:
-  backoffLimit: 0
   template:
     spec:
       containers:
-        - name: schema-load
-          image: 640168456211.dkr.ecr.us-east-1.amazonaws.com/schema-load:latest
+        - name: {{ .Values.name }}-schema
+          image: 640168456211.dkr.ecr.us-east-1.amazonaws.com/schema-load
           imagePullPolicy: Always
           envFrom:
-            - secretRef:
-                name: {{ .Values.name }}   
+          - secretRef:
+              name: {{ .Values.name }}
       restartPolicy: Never
-
+  backoffLimit: 0
+{{- end -}}
