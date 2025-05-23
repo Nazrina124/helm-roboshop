@@ -10,7 +10,7 @@ metadata:
   annotations:
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation
-  template:
+template:
     spec:
       containers:
        - name: schema-load
