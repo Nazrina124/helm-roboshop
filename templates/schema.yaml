@@ -11,15 +11,15 @@ metadata:
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation
 spec:
-    template:
+  backoffLimit: 0
+  template:
+    spec:
       containers:
-       - name: schema-load
-         image: 640168456211.dkr.ecr.us-east-1.amazonaws.com/schema-load:latest
-         imagePullPolicy: Always
-         envFrom:
-         - secretRef:
-           name: {{ .Values.name }}   
+        - name: schema-load
+          image: 640168456211.dkr.ecr.us-east-1.amazonaws.com/schema-load:latest
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: {{ .Values.name }}   
       restartPolicy: Never
-    backoffLimit: 0
-{{- end -}}
 
