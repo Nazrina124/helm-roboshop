@@ -10,8 +10,8 @@ metadata:
   annotations:
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation
-template:
-    spec:
+spec:
+    template:
       containers:
        - name: schema-load
          image: 640168456211.dkr.ecr.us-east-1.amazonaws.com/schema-load:latest
@@ -20,6 +20,6 @@ template:
          - secretRef:
            name: {{ .Values.name }}   
       restartPolicy: Never
-      backoffLimit: 0
+    backoffLimit: 0
 {{- end -}}
 
