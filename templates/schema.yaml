@@ -7,10 +7,10 @@ metadata:
   name: {{ .Values.name }}
   labels:
    appName: {{ .Values.name }}
-   annotations:
+    annotations:
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation
-  template:
+   template:
     spec:
       containers:
        - name: schema-load
@@ -20,6 +20,6 @@ metadata:
          - secretRef:
            name: {{ .Values.name }}   
       restartPolicy: Never
-  backoffLimit: 0
+      backoffLimit: 0
 {{- end -}}
 
